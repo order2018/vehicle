@@ -1,23 +1,27 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Home</div>
-
-                    <div class="panel-body">
-                        I'm an home component!
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="home">
+        <v-menu></v-menu>
+        <v-footer></v-footer>
     </div>
 </template>
 
 <script>
+    import Menu from './common/Menu'
+    import Footer from './common/Footer'
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        name:'Home',
+        data() {
+            return {
+
+            };
+        },
+        components:{
+            'v-menu':Menu,
+            'v-footer':Footer
         }
     }
 </script>
+
+<style scoped>
+
+</style>

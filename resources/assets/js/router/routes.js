@@ -4,7 +4,7 @@ let routes = [
 
     {
    		path: '/',
-   		component: require('./components/Home')
+   		component: require('../components/Home')
 	}
 
 ];
