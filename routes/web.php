@@ -15,6 +15,11 @@
     return view('welcome');
 });*/
 
-Route::any('{all}', function () {
-    return view('layouts.master');
-})->where(['all' => '.*']);
+Route::group(['domain'=>env('HOME_URL')],function (){
+
+    Route::any('{all}', function () {
+        return view('layouts.master');
+    })->where(['all' => '.*']);
+
+});
+
