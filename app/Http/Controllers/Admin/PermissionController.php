@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\AdminPermission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -10,7 +11,9 @@ class PermissionController extends Controller
     // 权限首页
     public function index() {
 
-        return view('admin.permission.index');
+        $permissions = AdminPermission::paginate(15);
+
+        return view('admin.permission.index',compact('permissions'));
 
     }
 
@@ -22,7 +25,16 @@ class PermissionController extends Controller
     }
 
     // 创建权限--存储行为
-    public function createStore(Request $request){
+    public function createStore(){
+
+        $this->validate(\request(),[
+            'name'=>'required|min:3',
+            'description'=>'required',
+        ]);
+
+        AdminPermission::create(\request(['name','description']));
+
+        return redirect()->route('permission');
 
     }
 

@@ -21,7 +21,7 @@
                             </div>
                             <div class="panel-body">
 
-                                <form role="form" action="{{ url('/user/'.$user->id.'/role') }}" method="post">
+                                <form role="form" action="{{ url('/user/'.$user.'/role') }}" method="post">
 
                                     {{ csrf_field() }}
 
@@ -30,7 +30,7 @@
                                         <input type="checkbox" name="roles[]" @if($myRoles->contains($role)) checked @endif value="{{ $role->id }}" >
                                         <span>{{ $role->name }}</span>
                                     </label>
-                                    @endsection
+                                    @endforeach
 
                                     <br>
 

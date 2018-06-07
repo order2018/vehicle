@@ -34,18 +34,20 @@
                                         </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($roles as $role)
                                         <tr>
-                                            <td>1</td>
-                                            <td>admin</td>
-                                            <td>0</td>
-                                            <td>2017-06-06 08:06:08</td>
+                                            <td>{{ $role->id }}</td>
+                                            <td>{{ $role->name }}</td>
+                                            <td>{{ $role->permission }}</td>
+                                            <td>{{ $role->created_at }}</td>
                                             <td>
                                                 <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('role.edit',['id'=>1]) }}')">编辑</button>
-                                                <button type="button" class="btn btn-info btn-xs">权限分配</button>
+                                                <button type="button" class="btn btn-info btn-xs" onclick="goPath('{{ url('/role/'.$role->id.'/permission') }}')">权限分配</button>
                                                 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-1">删除</button>
                                                 @include('include.admin._del_modal',['mid'=>1,'title'=>'admin','url'=>''])
                                             </td>
                                         </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>
