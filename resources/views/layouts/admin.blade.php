@@ -135,6 +135,9 @@
         }
     });
 </script>
+
+@include('include.admin._go-path')
+
 @yield('script')
 </body>
 

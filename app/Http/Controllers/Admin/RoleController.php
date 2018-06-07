@@ -5,42 +5,43 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class RoleController extends Controller
 {
-    // 用户首页
+    // 角色首页
     public function index() {
 
-        return view('admin.user.index');
+        return view('admin.role.index');
 
     }
 
-    // 创建用户
+    // 创建角色
     public function create() {
 
-        return view('admin.user.create');
+        return view('admin.role.create');
 
     }
 
-    // 创建用户--存储行为
+    // 创建角色--存储行为
     public function createStore(Request $request){
 
     }
 
-    // 编辑用户
+    // 编辑角色
     public function edit($id) {
 
-        return view('admin.user.edit');
+        return view('admin.role.edit');
 
     }
 
-    // 编辑用户--存储行为
+    // 编辑角色--存储行为
     public function editStore(Request $request){
 
     }
 
-    // 删除用户
+    // 删除角色
     public function delete($id) {
 
 
     }
+
 }

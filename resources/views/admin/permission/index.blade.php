@@ -15,11 +15,11 @@
                             <!-- BASIC TABLE -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">用户列表</h3>
+                                    <h3 class="panel-title">权限列表</h3>
                                 </div>
                                 <div class="panel-body">
                                     <p class="demo-button">
-                                        <button type="button" class="btn btn-success" onclick="goPath('{{ route('user.create') }}')">添加用户</button>
+                                        <button type="button" class="btn btn-success" onclick="goPath('{{ route('permission.create') }}')">添加权限</button>
                                     </p>
                                 </div>
                                 <div class="panel-body">
@@ -40,7 +40,7 @@
                                             <td>0</td>
                                             <td>2017-06-06 08:06:08</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('user.edit',['id'=>1]) }}')">编辑</button>
+                                                <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('permission.edit',['id'=>1]) }}')">编辑</button>
                                                 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-1">删除</button>
                                                 @include('include.admin._del_modal',['mid'=>1,'title'=>'admin','url'=>''])
                                             </td>

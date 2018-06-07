@@ -5,40 +5,40 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class PermissionController extends Controller
 {
-    // 用户首页
+    // 权限首页
     public function index() {
 
-        return view('admin.user.index');
+        return view('admin.permission.index');
 
     }
 
-    // 创建用户
+    // 创建权限
     public function create() {
 
-        return view('admin.user.create');
+        return view('admin.permission.create');
 
     }
 
-    // 创建用户--存储行为
+    // 创建权限--存储行为
     public function createStore(Request $request){
 
     }
 
-    // 编辑用户
+    // 编辑权限
     public function edit($id) {
 
-        return view('admin.user.edit');
+        return view('admin.permission.edit');
 
     }
 
-    // 编辑用户--存储行为
+    // 编辑权限--存储行为
     public function editStore(Request $request){
 
     }
 
-    // 删除用户
+    // 删除权限
     public function delete($id) {
 
 
