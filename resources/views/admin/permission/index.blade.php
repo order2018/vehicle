@@ -28,7 +28,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>名称</th>
-                                            <th>排序</th>
+                                            <th>描述</th>
                                             <th>时间</th>
                                             <th>操作</th>
                                         </tr>

@@ -43,4 +43,21 @@ class UserController extends Controller
 
 
     }
+
+    // 用户角色页面
+    public function role(\App\AdminUser $user){
+
+        $roles = \App\AdminRole::all();
+
+        $myRoles = $user->roles;
+
+        return view('admin.user.role',compact('roles','myRoles','user'));
+
+    }
+
+    // 存储用户角色
+    public function storeRole(){
+
+    }
+
 }

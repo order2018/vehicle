@@ -44,4 +44,16 @@ class RoleController extends Controller
 
     }
 
+    // 角色权限关系页面
+    public function permission($role) {
+
+        return view('admin.role.permission');
+
+    }
+
+    // 存储角色权限行为
+    public function storePermission(){
+
+    }
+
 }
