@@ -11,6 +11,7 @@ class LoginController extends Controller
     // 登录首页
     public function index() {
 
+        flashy()->success('测试成功！', 'javascript:;');
         return view('admin.login');
 
     }

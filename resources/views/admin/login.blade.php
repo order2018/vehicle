@@ -19,6 +19,28 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/img/favicon.png') }}">
+
+    <style type="text/css">
+        .flashy {
+            font-family: "Source Sans Pro", Arial, sans-serif;
+            padding: 11px 30px;
+            border-radius: 4px;
+            font-weight: 400;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: #fff;
+            z-index: 9999;
+        }
+        .am-dimmer {
+            z-index: 0;
+        }
+        .am-modal-dialog {
+            width: 360px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -73,4 +95,6 @@
 <!-- END WRAPPER -->
 </body>
 
+<script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+@include('flashy::message')
 </html>
