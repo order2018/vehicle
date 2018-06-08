@@ -28,8 +28,16 @@
                                         <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名称">
                                     </div>
                                     <div class="form-group">
+                                        <label for="email">邮 箱：</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="请输入用户邮箱">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="password">密 码：</label>
                                         <input type="password" class="form-control" id="password" name="password" placeholder="请输入用户密码">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">再次输入密码：</label>
+                                        <input type="password" class="form-control" id="password" name="password_confirmation" placeholder="请输入用户密码">
                                     </div>
                                     <button type="submit" class="btn btn-primary">确定</button>
                                     <button type="button" class="btn btn-warning" onclick="goPath('{{ route('user') }}')">返回</button>
@@ -48,5 +56,5 @@
     @include('include.admin._footer')
 </div>
 <!-- END WRAPPER -->
-
+@include('include.admin._error_flashy')
 @endsection

@@ -11,7 +11,6 @@ class LoginController extends Controller
     // 登录首页
     public function index() {
 
-        flashy()->success('测试成功！', 'javascript:;');
         return view('admin.login');
 
     }
@@ -34,6 +33,7 @@ class LoginController extends Controller
         }
 
         // 渲染
+        flashy()->success('登录成功！', 'javascript:;');
         return redirect()->route('index');
 
     }
@@ -42,6 +42,7 @@ class LoginController extends Controller
     public function logout(){
 
         Auth::logout();
+        flashy()->success('登出成功！', 'javascript:;');
         return redirect()->route('login');
 
     }
