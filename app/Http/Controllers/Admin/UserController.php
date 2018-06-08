@@ -12,7 +12,9 @@ class UserController extends Controller
     // 用户首页
     public function index() {
 
-        return view('admin.user.index');
+        $user = AdminUser::paginate(15);
+
+        return view('admin.user.index',compact('user'));
 
     }
 
@@ -25,6 +27,14 @@ class UserController extends Controller
 
     // 创建用户--存储行为
     public function createStore(Request $request){
+
+        $this->validate(\request(),[
+            'name'=> 'required'
+        ]);
+
+        AdminUser::create(array_merge($request->except(['_token','password']),['password'=>bcrypt($request->get('password'))]));
+
+        return back();
 
     }
 
@@ -47,36 +57,36 @@ class UserController extends Controller
     }
 
     // 用户角色页面
-    public function role(AdminUser $adminUser,$user){
+    public function role(AdminUser $user){
 
         $roles = AdminRole::all();
 
-        $myRoles = $adminUser->roles;
+        $myRoles = $user->roles;
 
         return view('admin.user.role',compact('roles','myRoles','user'));
 
     }
 
     // 存储用户角色
-    public function storeRole(AdminUser $adminUser){
+    public function storeRole(AdminUser $user){
 
         $this->validate(\request(),[
             'roles'=> 'required|array'
         ]);
 
         $roles = AdminRole::findMany(\request('roles'));
-        $myRoles = $adminUser->roles;
+        $myRoles = $user->roles;
 
         // 需要增加的
         $addRoles = $roles->diff($myRoles);
         foreach ($addRoles as $role){
-            $adminUser->assignRole($role);
+            $user->assignRole($role);
         }
 
         // 要删除的
         $deleteRoles = $myRoles->diff($roles);
         foreach ($deleteRoles as $role){
-            $adminUser->deleteRole($role);
+            $user->deleteRole($role);
         }
 
         return back();

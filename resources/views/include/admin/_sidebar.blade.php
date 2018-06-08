@@ -4,6 +4,7 @@
         <nav>
             <ul class="nav">
                 <li><a href="{{ url('/') }}" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
+                @can('system')
                 <li>
                     <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-list"></i> <span>权限管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subPages" class="collapse ">
@@ -14,6 +15,8 @@
                         </ul>
                     </div>
                 </li>
+                @endcan
+                @can('permission')
                 <li>
                     <a href="#subSet" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cog"></i> <span>系统设置</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                     <div id="subSet" class="collapse ">
@@ -23,6 +26,7 @@
                         </ul>
                     </div>
                 </li>
+                @endcan
             </ul>
         </nav>
     </div>

@@ -21,7 +21,7 @@
                             </div>
                             <div class="panel-body">
 
-                                <form role="form" action="{{ url('/role/'.$role.'/permission') }}" method="post">
+                                <form role="form" action="{{ url('/role/'.$role->id.'/permission') }}" method="post">
 
                                     {{ csrf_field() }}
 

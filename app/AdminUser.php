@@ -9,6 +9,11 @@ class AdminUser extends Authenticatable
 {
     protected $table = 'admin_users';
 
+    protected $fillable = [
+        'name',
+        'password',
+    ];
+
     // 用户有哪一些角色
     public function roles()
     {

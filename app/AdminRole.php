@@ -8,6 +8,11 @@ class AdminRole extends Model
 {
     protected $table = 'admin_roles';
 
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
     // 当前角色的所有权限
     public function permissions()
     {

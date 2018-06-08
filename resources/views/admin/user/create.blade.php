@@ -21,7 +21,8 @@
                             </div>
                             <div class="panel-body">
 
-                                <form role="form">
+                                <form role="form" action="{{ route('user.store') }}" method="post">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="name">用户名：</label>
                                         <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名称">
