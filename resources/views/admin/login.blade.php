@@ -33,26 +33,29 @@
                             <div class="logo text-center"><img src="{{ asset('assets/img/logo-dark.png') }}" alt="Klorofil Logo"></div>
                             <p class="lead">Login to your account</p>
                         </div>
-                        <form class="form-auth-small" action="index.php">
+
+                        <form class="form-auth-small" action="{{ route('login') }}" method="post">
+                            {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="signin-email" class="control-label sr-only">Email</label>
-                                <input type="email" class="form-control" id="signin-email" value="samuel.gold@domain.com" placeholder="Email">
+                                <label for="signin-email" class="control-label sr-only">邮箱</label>
+                                <input type="email" class="form-control" id="signin-email" name="email" placeholder="Email" required autofocus>
                             </div>
                             <div class="form-group">
-                                <label for="signin-password" class="control-label sr-only">Password</label>
-                                <input type="password" class="form-control" id="signin-password" value="thisisthepassword" placeholder="Password">
+                                <label for="signin-password" class="control-label sr-only">密码</label>
+                                <input type="password" class="form-control" id="signin-password" name="password" placeholder="Password">
                             </div>
                             <div class="form-group clearfix">
                                 <label class="fancy-checkbox element-left">
-                                    <input type="checkbox">
-                                    <span>Remember me</span>
+                                    <input type="checkbox" value="1" name="is_remember">
+                                    <span>记住我</span>
                                 </label>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">登陆</button>
                             <div class="bottom">
                                 <span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
                             </div>
                         </form>
+
                     </div>
                 </div>
                 <div class="right">

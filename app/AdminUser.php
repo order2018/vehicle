@@ -11,7 +11,9 @@ class AdminUser extends Authenticatable
 
     protected $fillable = [
         'name',
+        'email',
         'password',
+        'remember_token',
     ];
 
     // 用户有哪一些角色

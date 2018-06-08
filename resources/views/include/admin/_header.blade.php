@@ -33,12 +33,12 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/user.png') }}" class="img-circle" alt="Avatar"> <span>{{ Auth::user()->name }}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="lnr lnr-user"></i> <span>介绍</span></a></li>
                         <li><a href="#"><i class="lnr lnr-envelope"></i> <span>消息</span></a></li>
                         <li><a href="#"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
-                        <li><a href="#"><i class="lnr lnr-exit"></i> <span>退出</span></a></li>
+                        <li><a href="{{ route('logout') }}"><i class="lnr lnr-exit"></i> <span>退出</span></a></li>
                     </ul>
                 </li>
                 <!-- <li>

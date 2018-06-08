@@ -5,13 +5,16 @@ Route::group(['domain'=>env('ADMIN_URL'),'namespace'=>'Admin'], function () {
     // 登陆页面
     Route::get('/','LoginController@index');
     Route::get('/login',['as' => 'login', 'uses' => 'LoginController@index']);
-
+    Route::post('/login',['as' => 'login', 'uses' => 'LoginController@store']);
 
     // 定义系统模块管理，权限路由控制----------------------------------------------------------------------------------
     Route::group(['middleware'=>'can:system'],function (){
 
         // 后台首页
         Route::get('/index',['as' => 'index', 'uses' => 'IndexController@index']);
+
+        // 登出行为
+        Route::get('/logout',['as' => 'logout', 'uses' => 'LoginController@logout']);
 
     });
 
