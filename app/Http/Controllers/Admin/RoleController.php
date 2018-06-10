@@ -71,26 +71,34 @@ class RoleController extends Controller
     // 存储角色权限行为
     public function storePermission(AdminRole $role){
 
-        $this->validate(\request(),[
-           'permissions'=> 'required|array'
-        ]);
+        try{
 
-        $permissions = AdminPermission::findMany(\request('permissions'));
-        $myPermissions = $role->permissions;
+            $this->validate(\request(),[
+                'permissions'=> 'required|array'
+            ]);
 
-        // 对已经有的权限
-        $addPermissions = $permissions->diff($myPermissions);
-        foreach ($addPermissions as $permission){
-            $role->grantPermission($permission);
+            $permissions = AdminPermission::findMany(\request('permissions'));
+            $myPermissions = $role->permissions;
+
+            // 对已经有的权限
+            $addPermissions = $permissions->diff($myPermissions);
+            foreach ($addPermissions as $permission){
+                $role->grantPermission($permission);
+            }
+
+            // 删除的权限
+            $deletePermissions = $myPermissions->diff($permissions);
+            foreach ($deletePermissions as $permission){
+                $role->deletePermission($permission);
+            }
+
+            return app('common')->jump('分配成功！','role');
+
+        }catch (\Exception $e){
+
+            return app('common')->jump('分配失败！');
+
         }
-
-        // 删除的权限
-        $deletePermissions = $myPermissions->diff($permissions);
-        foreach ($deletePermissions as $permission){
-            $role->deletePermission($permission);
-        }
-
-        return back();
 
     }
 

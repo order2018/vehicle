@@ -17,7 +17,7 @@
                         <!-- INPUTS -->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">角色权限列表</h3>
+                                <h3 class="panel-title">权限分配　<small>为 <font color="red">{{ $role->description }}</font> 分配以下权限</small> </h3>
                             </div>
                             <div class="panel-body">
 
@@ -28,7 +28,7 @@
                                     @foreach($permissions as $permission)
                                         <label class="fancy-checkbox">
                                             <input type="checkbox" name="permissions[]" @if($myPermissions->contains($permission)) checked @endif value="{{ $permission->id }}" >
-                                            <span>{{ $permission->name }}</span>
+                                            <span>{{ $permission->description }}</span>
                                         </label>
                                     @endforeach
 

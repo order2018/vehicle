@@ -17,7 +17,7 @@
                         <!-- INPUTS -->
                         <div class="panel">
                             <div class="panel-heading">
-                                <h3 class="panel-title">用户角色列表</h3>
+                                <h3 class="panel-title">角色分配　<small>为 <font color="red">{{ $user->name }}</font> 分配以下角色</small> </h3>
                             </div>
                             <div class="panel-body">
 
@@ -28,7 +28,7 @@
                                     @foreach($roles as $role)
                                     <label class="fancy-checkbox">
                                         <input type="checkbox" name="roles[]" @if($myRoles->contains($role)) checked @endif value="{{ $role->id }}" >
-                                        <span>{{ $role->name }}</span>
+                                        <span>{{ $role->description }}</span>
                                     </label>
                                     @endforeach
 
