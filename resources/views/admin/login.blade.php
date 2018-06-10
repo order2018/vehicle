@@ -97,4 +97,5 @@
 
 <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
 @include('flashy::message')
+@include('include.admin._error_flashy')
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,25 +17,15 @@ class LoginController extends Controller
     }
 
     // 登录行为
-    public function store() {
+    public function store(LoginRequest $request) {
 
-        // 验证
-        $this->validate(\request(),[
-           'email'=>'required|email',
-           'password'=>'required|min:5|max:10',
-           'is_remember'=>'integer',
-        ]);
+        if (Auth::attempt($request->getUser(),$request->getRemember())){
 
-        // 逻辑
-        $user = \request(['email','password']);
-        $is_remember = boolval(\request('$is_remember'));
-        if (Auth::attempt($user,$is_remember)){
-            return redirect()->route('index');
+            return app('common')->jump('登录成功！','index');
+
         }
 
-        // 渲染
-        flashy()->success('登录成功！', 'javascript:;');
-        return redirect()->route('index');
+        return app('common')->jump('登录失败！');
 
     }
 
@@ -42,8 +33,7 @@ class LoginController extends Controller
     public function logout(){
 
         Auth::logout();
-        flashy()->success('登出成功！', 'javascript:;');
-        return redirect()->route('login');
+        return app('common')->jump('登出成功！','login');
 
     }
 }
