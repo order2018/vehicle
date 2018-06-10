@@ -41,9 +41,9 @@
                                             <td>{{ $permission->description }}</td>
                                             <td>{{ $permission->created_at }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('permission.edit',['id'=>1]) }}')">编辑</button>
-                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-1">删除</button>
-                                                @include('include.admin._del_modal',['mid'=>1,'title'=>'admin','url'=>''])
+                                                <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('permission.edit',['id'=>$permission->id]) }}')">编辑</button>
+                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-{{ $permission->id }}">删除</button>
+                                                @include('include.admin._del_modal',['mid'=>$permission->id,'title'=>$permission->description,'url'=>route('permission.delete',['id'=>$permission->id])])
                                             </td>
                                         </tr>
                                         @endforeach

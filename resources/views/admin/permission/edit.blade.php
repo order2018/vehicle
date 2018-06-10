@@ -20,42 +20,20 @@
                                 <h3 class="panel-title">编辑权限</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" class="form-control" placeholder="text field">
-                                <br>
-                                <input type="password" class="form-control" value="asecret">
-                                <br>
-                                <textarea class="form-control" placeholder="textarea" rows="4"></textarea>
-                                <br>
-                                <select class="form-control">
-                                    <option value="cheese">Cheese</option>
-                                    <option value="tomatoes">Tomatoes</option>
-                                    <option value="mozarella">Mozzarella</option>
-                                    <option value="mushrooms">Mushrooms</option>
-                                    <option value="pepperoni">Pepperoni</option>
-                                    <option value="onions">Onions</option>
-                                </select>
-                                <br>
-                                <label class="fancy-checkbox">
-                                    <input type="checkbox">
-                                    <span>Fancy Checkbox 1</span>
-                                </label>
-                                <label class="fancy-checkbox">
-                                    <input type="checkbox">
-                                    <span>Fancy Checkbox 2</span>
-                                </label>
-                                <label class="fancy-checkbox">
-                                    <input type="checkbox">
-                                    <span>Fancy Checkbox 3</span>
-                                </label>
-                                <br>
-                                <label class="fancy-radio">
-                                    <input name="gender" value="male" type="radio">
-                                    <span><i></i>Male</span>
-                                </label>
-                                <label class="fancy-radio">
-                                    <input name="gender" value="female" type="radio">
-                                    <span><i></i>Female</span>
-                                </label>
+                                <form role="form" action="{{ route('permission.edit.store') }}" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="form-group">
+                                        <label for="name">权限名：</label>
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ $id->name }}" placeholder="请输入权限名称">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="description">描 述：</label>
+                                        <input type="text" class="form-control" id="description" name="description" value="{{ $id->description }}" placeholder="请输入描述">
+                                    </div>
+                                    <input type="hidden"  name="id" value="{{ $id->id }}">
+                                    <button type="submit" class="btn btn-primary">确定</button>
+                                    <button type="button" class="btn btn-warning" onclick="goPath('{{ route('permission') }}')">返回</button>
+                                </form>
                             </div>
                         </div>
                         <!-- END INPUTS -->
@@ -69,5 +47,6 @@
     @include('include.admin._footer')
 </div>
 <!-- END WRAPPER -->
+    @include('include.admin._error_flashy')
 
 @endsection

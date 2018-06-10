@@ -39,14 +39,26 @@ class RoleController extends Controller
     }
 
     // 编辑角色
-    public function edit($id) {
+    public function edit(AdminRole $id) {
 
-        return view('admin.role.edit');
+        return view('admin.role.edit',compact('id'));
 
     }
 
     // 编辑角色--存储行为
     public function editStore(Request $request){
+
+        $this->validate($request,[
+            'name'=>'required|min:3',
+            'description'=>'required',
+        ],[
+            'name.required' => '名称必填',
+            'name.min' => '名称不必太长',
+            'description.required' => '描述必填',
+        ]);
+
+        AdminRole::whereId($request['id'])->update($request->except(['_token']));
+        return app('common')->jump('添加成功！','role');
 
     }
 

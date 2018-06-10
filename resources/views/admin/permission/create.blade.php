@@ -47,4 +47,6 @@
 </div>
 <!-- END WRAPPER -->
 
+    @include('include.admin._error_flashy')
+
 @endsection

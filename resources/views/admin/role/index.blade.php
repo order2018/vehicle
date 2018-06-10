@@ -43,8 +43,8 @@
                                             <td>
                                                 <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('role.edit',['id'=>$role->id]) }}')">编辑</button>
                                                 <button type="button" class="btn btn-info btn-xs" onclick="goPath('{{ url('/role/'.$role->id.'/permission') }}')">权限分配</button>
-                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-1">删除</button>
-                                                @include('include.admin._del_modal',['mid'=>$role->id,'title'=>'admin','url'=>''])
+                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-{{ $role->id }}">删除</button>
+                                                @include('include.admin._del_modal',['mid'=>$role->id,'title'=>$role->description,'url'=>''])
                                             </td>
                                         </tr>
                                         @endforeach
