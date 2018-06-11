@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Hash;
 use App\AdminRole;
 use App\AdminUser;
 use App\Http\Requests\Admin\AdminRequest;
+use App\Http\Requests\Admin\AdminUserRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -44,20 +46,66 @@ class UserController extends Controller
     }
 
     // 编辑用户
-    public function edit($id) {
+    public function edit(AdminUser $id) {
 
-        return view('admin.user.edit');
+        return view('admin.user.edit',compact('id'));
 
     }
 
     // 编辑用户--存储行为
-    public function editStore(Request $request){
+    public function editStore(AdminUserRequest $request){
+
+        try{
+
+            $admin_user = AdminUser::find($request->get('id','0'));
+
+            // 判断原密码和输入密码是否匹配
+            if (!Hash::check($request->get('password_raw'),$admin_user->password)){
+
+                return app('common')->jump('原密码不对！');
+
+            }else{
+
+                $admin_user->email = $request->get('email');
+                $admin_user->password = bcrypt($request->get('password'));
+                $admin_user->save();
+
+                return app('common')->jump('更新成功！','user');
+
+            }
+
+        }catch (\Exception $e){
+
+            return app('common')->jump('更新失败！');
+
+        }
 
     }
 
     // 删除用户
     public function delete($id) {
 
+        try{
+
+            // 判断admin用户无法删除
+            if ($id=="1"){
+                return app('common')->jump('此记录无法删除！','user');
+            }else{
+                // 1.删除角色用户表关联的数据
+                $roleUser = \DB::table('admin_role_users')->where('user_id',$id)->get()->map(function ($value) { return (array)$value; })->toArray();
+                foreach ($roleUser as $roleUsers){
+                    \DB::table('admin_role_users')->where(['id'=>$roleUsers['id'],'user_id'=>$id])->delete();
+                }
+                // 2.删除用户数据
+                AdminUser::destroy($id);
+                return app('common')->jump('删除成功！','user');
+            }
+
+        }catch (\Exception $e){
+
+            return app('common')->jump('删除失败！');
+
+        }
 
     }
 
@@ -79,6 +127,8 @@ class UserController extends Controller
 
             $this->validate(\request(),[
                 'roles'=> 'required|array'
+            ],[
+                'roles.required' => '角色必填',
             ]);
 
             $roles = AdminRole::findMany(\request('roles'));

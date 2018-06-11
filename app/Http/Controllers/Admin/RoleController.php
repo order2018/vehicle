@@ -65,6 +65,34 @@ class RoleController extends Controller
     // 删除角色
     public function delete($id) {
 
+        try{
+            // 判断超级管理员无法删除
+            if ($id=="1"){
+                return app('common')->jump('此记录无法删除！','role');
+            }else{
+                // 1.删除角色用户表关联的数据
+                $roleUser = \DB::table('admin_role_users')->where('role_id',$id)->get()->map(function ($value) { return (array)$value; })->toArray();
+                foreach ($roleUser as $roleUsers){
+                    \DB::table('admin_role_users')->where(['id'=>$roleUsers['id'],'role_id'=>$id])->delete();
+                }
+
+                // 2.删除权限角色关联的数据
+                $result = \DB::table('admin_permission_roles')->where('role_id',$id)->get()->map(function ($value) { return (array)$value; })->toArray();
+                foreach ($result as $val){
+                    \DB::table('admin_permission_roles')->where(['id'=>$val['id'],'role_id'=>$id])->delete();
+                }
+
+                // 3.删除角色数据
+                AdminRole::destroy($id);
+
+                return app('common')->jump('删除成功！','role');
+            }
+
+        }catch (\Exception $e){
+
+            return app('common')->jump('删除失败！');
+
+        }
 
     }
 

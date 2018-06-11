@@ -34,7 +34,6 @@ class CreatePermissionAndRoles extends Migration
             $table->increments('id');
             $table->integer('role_id');
             $table->integer('permission_id');
-            $table->timestamps();
         });
 
         // 用户角色表
@@ -42,7 +41,6 @@ class CreatePermissionAndRoles extends Migration
             $table->increments('id');
             $table->integer('role_id');
             $table->integer('user_id');
-            $table->timestamps();
         });
 
     }

@@ -43,8 +43,8 @@
                                             <td>
                                                 <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ route('user.edit',['id'=>$list->id]) }}')">编辑</button>
                                                 <button type="button" class="btn btn-primary btn-xs" onclick="goPath('{{ url('/user/'.$list->id.'/role') }}')">角色分配</button>
-                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-1">删除</button>
-                                                @include('include.admin._del_modal',['mid'=>$list->id,'title'=>'admin','url'=>''])
+                                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal-{{ $list->id }}">删除</button>
+                                                @include('include.admin._del_modal',['mid'=>$list->id,'title'=>$list->name,'url'=>route('user.delete',['id'=>$list->id])])
                                             </td>
                                         </tr>
                                         @endforeach

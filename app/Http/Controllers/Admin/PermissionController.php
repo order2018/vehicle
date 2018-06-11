@@ -62,13 +62,25 @@ class PermissionController extends Controller
     public function delete($id) {
 
         try{
-
-            AdminPermission::destroy($id);
-            return app('common')->jump('删除成功！','permission');
+            // 判断系统设置，权限管理无法删除
+            if ($id=="1"){
+                goto del;
+            }elseif($id=="2"){
+                del:
+                return app('common')->jump('此记录无法删除！','permission');
+            }else{
+                // 读取权限角色关系表转换数组
+                $result = \DB::table('admin_permission_roles')->where('permission_id',$id)->get()->map(function ($value) { return (array)$value; })->toArray();
+                foreach ($result as $val){
+                    \DB::table('admin_permission_roles')->where(['id'=>$val['id'],'permission_id'=>$id])->delete();
+                }
+                AdminPermission::destroy($id);
+                return app('common')->jump('删除成功！','permission');
+            }
 
         }catch (\Exception $e){
 
-            return app('common')->jump('删除失败！');
+           return app('common')->jump('删除失败！');
 
         }
 
