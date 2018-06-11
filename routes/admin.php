@@ -16,6 +16,18 @@ Route::group(['domain'=>env('ADMIN_URL'),'namespace'=>'Admin'], function () {
         // 登出行为
         Route::get('/logout',['as' => 'logout', 'uses' => 'LoginController@logout']);
 
+        // --------后台菜单设置---------
+        // 菜单列表
+        Route::get('/menu',['as' => 'menu', 'uses' => 'MenuController@index']);
+        // 创建菜单
+        Route::get('/menu/create',['as' => 'menu.create', 'uses' => 'MenuController@create']);
+        Route::post('/menu/create',['as' => 'menu.store', 'uses' => 'MenuController@createStore']);
+        // 创建菜单
+        Route::get('/menu/edit/{id}',['as' => 'menu.edit', 'uses' => 'MenuController@edit']);
+        Route::post('/menu/edit',['as' => 'menu.edit.store', 'uses' => 'MenuController@editStore']);
+        // 删除菜单
+        Route::get('/menu/del/{id}',['as' => 'menu.delete', 'uses' => 'MenuController@delete']);
+
     });
 
     // 定义权限模块管理，权限路由控制----------------------------------------------------------------------------------

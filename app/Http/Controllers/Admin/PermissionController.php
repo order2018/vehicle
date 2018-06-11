@@ -54,7 +54,7 @@ class PermissionController extends Controller
         ]);
 
         AdminPermission::whereId($request['id'])->update($request->except(['_token']));
-        return app('common')->jump('添加成功！','permission');
+        return app('common')->jump('更新成功！','permission');
 
     }
 
