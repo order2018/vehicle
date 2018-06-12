@@ -20,6 +20,12 @@
                                 <h3 class="panel-title">基本设置</h3>
                             </div>
                             <div class="panel-body">
+                                <p class="demo-button">
+                                    <button type="button" class="btn btn-success" onclick="goPath('{{ route('basic') }}')">基本设置</button>
+                                    <button type="button" class="btn btn-warning" onclick="goPath('{{ route('system') }}')">系统设置</button>
+                                </p>
+                            </div>
+                            <div class="panel-body">
 
                                 <form role="form" action="" method="post">
                                     {{ csrf_field() }}

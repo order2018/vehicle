@@ -31,6 +31,10 @@ Route::group(['domain'=>env('ADMIN_URL'),'namespace'=>'Admin'], function () {
         // --------后台基本设置---------
         // 基本设置
         Route::get('/basic',['as' => 'basic', 'uses' => 'BasicController@index']);
+        Route::post('/basic',['as' => 'basic.store', 'uses' => 'BasicController@store']);
+        // 系统设置
+        Route::get('/basic/system',['as' => 'system', 'uses' => 'BasicController@system']);
+        Route::post('/basic/system',['as' => 'system.store', 'uses' => 'BasicController@systemStore']);
 
     });
 

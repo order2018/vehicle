@@ -37,7 +37,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#"><i class="lnr lnr-user"></i> <span>介绍</span></a></li>
                         <li><a href="#"><i class="lnr lnr-envelope"></i> <span>消息</span></a></li>
-                        <li><a href="#"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
+                        <li><a href="{{ route('basic') }}"><i class="lnr lnr-cog"></i> <span>设置</span></a></li>
                         <li><a href="{{ route('logout') }}"><i class="lnr lnr-exit"></i> <span>退出</span></a></li>
                     </ul>
                 </li>
