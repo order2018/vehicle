@@ -74,8 +74,35 @@ class MenuController extends Controller
     // 删除菜单
     public function delete($id){
 
-        Menu::destroy($id);
-        return app('common')->jump('删除成功！','menu');
+        $url = app('common')->jump('此记录无法删除！','menu');
+
+        switch ($id)
+        {
+            case 1:
+                return $url;
+                break;
+            case 2:
+                return $url;
+                break;
+            case 3:
+                return $url;
+                break;
+            case 4:
+                return $url;
+                break;
+            case 5:
+                return $url;
+                break;
+            case 6:
+                return $url;
+                break;
+            case 7:
+                return $url;
+                break;
+            default:
+                Menu::destroy($id);
+                return app('common')->jump('删除成功！','menu');
+        }
 
     }
 

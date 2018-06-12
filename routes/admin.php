@@ -28,6 +28,10 @@ Route::group(['domain'=>env('ADMIN_URL'),'namespace'=>'Admin'], function () {
         // 删除菜单
         Route::get('/menu/del/{id}',['as' => 'menu.delete', 'uses' => 'MenuController@delete']);
 
+        // --------后台基本设置---------
+        // 基本设置
+        Route::get('/basic',['as' => 'basic', 'uses' => 'BasicController@index']);
+
     });
 
     // 定义权限模块管理，权限路由控制----------------------------------------------------------------------------------

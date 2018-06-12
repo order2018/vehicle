@@ -4,7 +4,7 @@
         <nav>
 
             <ul class="nav">
-                <li><a href="{{ url('/') }}" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
+                <li><a href="{{ url('/index') }}" class="active"><i class="lnr lnr-home"></i> <span>系统首页</span></a></li>
                 <?php $menus =  \App\Menu::where('pid',0)->get(); ?>
 
                 @foreach($menus as $menu)
