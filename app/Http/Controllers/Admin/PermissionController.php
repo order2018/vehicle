@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     // 权限首页
     public function index() {
 

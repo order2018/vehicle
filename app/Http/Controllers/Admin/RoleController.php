@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     // 角色首页
     public function index() {
 

@@ -12,6 +12,11 @@ use App\Http\Controllers\Controller;
 
 class BasicController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     // 基本设置
     public function index(){
 

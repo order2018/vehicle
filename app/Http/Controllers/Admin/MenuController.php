@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class MenuController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     // 菜单列表
     public function index(Menu $menu){
 
