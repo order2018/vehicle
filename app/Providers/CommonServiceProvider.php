@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Common\Common;
+use App\Common\PublicFunction;
+use App\Common\Upload;
 use Illuminate\Support\ServiceProvider;
 
 class CommonServiceProvider extends ServiceProvider
@@ -26,7 +28,7 @@ class CommonServiceProvider extends ServiceProvider
     {
         $this->app->bind('common',function (){
 
-            return new Common();
+            return new Common(new Upload(),new PublicFunction());
 
         });
     }

@@ -12,6 +12,12 @@ class LoginController extends Controller
     // 登录首页
     public function index() {
 
+        if (!empty(Auth::user()->id)){
+
+            return redirect()->route('index');
+
+        }
+
         return view('admin.login');
 
     }

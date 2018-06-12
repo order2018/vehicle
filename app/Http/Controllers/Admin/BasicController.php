@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Basic;
+use App\Common\Common;
+use App\Http\Requests\Admin\BasicRequest;
 use App\Http\Requests\Admin\SystemRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -13,12 +15,24 @@ class BasicController extends Controller
     // 基本设置
     public function index(){
 
-        return view('admin.basic.index');
+        return view('admin.basic.index',['data'=>Basic::find(1)]);
 
     }
 
     // 基本设置--存储行为
-    public function store(){
+    public function store(BasicRequest $request,Common $common){
+
+        $result = $common->publicFunction->EditUpdatePicture('\App\Basic','id','basic_picture');
+
+        if ($result) {
+
+            return $common->jump('更新成功！','basic');
+
+        }else{
+
+            return $common->jump('更新失败！');
+
+        }
 
     }
 

@@ -39,21 +39,21 @@
 
                                                     <div class="form-group">
                                                         <label for="home_name">系统前台名称：</label>
-                                                        <input type="text" class="form-control" id="home_name" name="home_name" value="{{ $data['home_name'] }}" placeholder="请输入系统系统前台名称">
+                                                        <input type="text" class="form-control" id="home_name" name="home_name" value="{{ $data['home_name'] }}" placeholder="请输入系统系统前台名称" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="home_url">系统前台URL：</label>
-                                                        <input type="text" class="form-control" id="home_url" name="home_url" value="{{ $data['home_url'] }}" placeholder="请输入系统前台URL">
+                                                        <input type="text" class="form-control" id="home_url" name="home_url" value="{{ $data['home_url'] }}" placeholder="请输入系统前台URL" required>
                                                     </div>
 
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="admin_name">系统前后台称：</label>
-                                                        <input type="text" class="form-control" id="admin_name" name="admin_name" value="{{ $data['admin_name'] }}" placeholder="请输入系统系统后台名称">
+                                                        <input type="text" class="form-control" id="admin_name" name="admin_name" value="{{ $data['admin_name'] }}" placeholder="请输入系统系统后台名称" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="admin_url">系统后台URL：</label>
-                                                        <input type="text" class="form-control" id="admin_url" name="admin_url" value="{{ $data['admin_url'] }}" placeholder="请输入系统后台URL">
+                                                        <input type="text" class="form-control" id="admin_url" name="admin_url" value="{{ $data['admin_url'] }}" placeholder="请输入系统后台URL" required>
                                                     </div>
 
                                                 </div>
@@ -69,7 +69,7 @@
 
                                                     <div class="form-group">
                                                         <label for="app_name">框架系统：</label>
-                                                        <input type="text" class="form-control" id="app_name" name="app_name" value="{{ $data['app_name'] }}" placeholder="请输入框架系统">
+                                                        <input type="text" class="form-control" id="app_name" name="app_name" value="{{ $data['app_name'] }}" placeholder="请输入框架系统" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="app_debug">开启DEBUG：</label>
@@ -84,7 +84,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="app_url">系统URL：</label>
-                                                        <input type="text" class="form-control" id="app_url" name="app_url" value="{{ $data['app_url'] }}" placeholder="请输入系统URL">
+                                                        <input type="text" class="form-control" id="app_url" name="app_url" value="{{ $data['app_url'] }}" placeholder="请输入系统URL" required>
                                                     </div>
 
                                                 </div>
@@ -99,23 +99,23 @@
                                                 <div class="panel-body">
                                                     <div class="form-group">
                                                         <label for="db_connection">数据库：</label>
-                                                        <input type="text" class="form-control" id="db_connection" name="db_connection" value="{{ $data['db_connection'] }}" placeholder="请输入数据库">
+                                                        <input type="text" class="form-control" id="db_connection" name="db_connection" value="{{ $data['db_connection'] }}" placeholder="请输入数据库" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="db_host">数据库地址：</label>
-                                                        <input type="text" class="form-control" id="db_host" name="db_host" value="{{ $data['db_host'] }}" placeholder="请输入数据地址">
+                                                        <input type="text" class="form-control" id="db_host" name="db_host" value="{{ $data['db_host'] }}" placeholder="请输入数据地址" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="db_port">数据端口号：</label>
-                                                        <input type="text" class="form-control" id="db_port" name="db_port" value="{{ $data['db_port'] }}" placeholder="请输入数据端口号">
+                                                        <input type="text" class="form-control" id="db_port" name="db_port" value="{{ $data['db_port'] }}" placeholder="请输入数据端口号" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="db_database">数据库名称：</label>
-                                                        <input type="text" class="form-control" id="db_database" name="db_database" value="{{ $data['db_database'] }}" placeholder="请输入数据库名称">
+                                                        <input type="text" class="form-control" id="db_database" name="db_database" value="{{ $data['db_database'] }}" placeholder="请输入数据库名称" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="db_username">数据库账号：</label>
-                                                        <input type="text" class="form-control" id="db_username" name="db_username" value="{{ $data['db_username'] }}" placeholder="请输入数据库账号">
+                                                        <input type="text" class="form-control" id="db_username" name="db_username" value="{{ $data['db_username'] }}" placeholder="请输入数据库账号" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="db_prefix">数据库前缀：</label>
@@ -138,11 +138,11 @@
 
                                                     <div class="form-group">
                                                         <label for="cache_driver">缓存配置：</label>
-                                                        <input type="text" class="form-control" id="cache_driver" name="cache_driver" value="{{ $data['cache_driver'] }}" placeholder="请输入缓存配置">
+                                                        <input type="text" class="form-control" id="cache_driver" name="cache_driver" value="{{ $data['cache_driver'] }}" placeholder="请输入缓存配置" required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="session_driver">SESSION配置：</label>
-                                                        <input type="text" class="form-control" id="session_driver" name="session_driver" value="{{ $data['session_driver'] }}" placeholder="请输入SESSION配置">
+                                                        <input type="text" class="form-control" id="session_driver" name="session_driver" value="{{ $data['session_driver'] }}" placeholder="请输入SESSION配置" required>
                                                     </div>
 
                                                 </div>
