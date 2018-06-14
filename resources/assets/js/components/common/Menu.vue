@@ -3,39 +3,39 @@
         <div class="weui-grids">
             <a href="javascript:;" class="weui-grid">
                 <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w01.png">
                 </div>
                 <p class="weui-grid__label">违章查询</p>
             </a>
             <a href="javascript:;" class="weui-grid">
                 <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w02.png">
                 </div>
                 <p class="weui-grid__label">违章代办</p>
             </a>
             <a href="javascript:;" class="weui-grid">
                 <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
-                </div>
-                <p class="weui-grid__label">车牌号校验</p>
-            </a>
-            <a href="javascript:;" class="weui-grid">
-                <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
-                </div>
-                <p class="weui-grid__label">今日油价</p>
-            </a>
-            <a href="javascript:;" class="weui-grid">
-                <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w04.png">
                 </div>
                 <p class="weui-grid__label">车牌识别</p>
             </a>
             <a href="javascript:;" class="weui-grid">
                 <div class="weui-grid__icon">
-                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/wei.png">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w03.png">
+                </div>
+                <p class="weui-grid__label">今日油价</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w05.png">
                 </div>
                 <p class="weui-grid__label">驾驶证查询</p>
+            </a>
+            <a href="javascript:;" class="weui-grid">
+                <div class="weui-grid__icon">
+                    <img slot="icon" src="http://admin.vehicle.pw/uploads/icon/w06.png">
+                </div>
+                <p class="weui-grid__label">智能问答</p>
             </a>
         </div>
     </div>

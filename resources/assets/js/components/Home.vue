@@ -17,36 +17,62 @@
             <div class="mint-cell-right"></div>
         </a>
 
-        <div class="container">
-            <div class="panel">
-                <div class="bd">
-                    <div class="weui_panel weui_panel_access">
-                        <div class="weui_panel_hd">图文组合列表</div>
-                        <div class="weui_panel_bd">
-                            <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
-                                <div class="weui_media_hd">
-                                    <img class="weui_media_appmsg_thumb" src="" alt="">
-                                </div>
-                                <div class="weui_media_bd">
-                                    <h4 class="weui_media_title">标题一</h4>
-                                    <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="weui_media_box weui_media_appmsg">
-                                <div class="weui_media_hd">
-                                    <img class="weui_media_appmsg_thumb" src="" alt="">
-                                </div>
-                                <div class="weui_media_bd">
-                                    <h4 class="weui_media_title">标题二</h4>
-                                    <p class="weui_media_desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
-                                </div>
-                            </a>
-                        </div>
-                        <a class="weui_panel_ft" href="javascript:void(0);">查看更多</a>
-                    </div>
+        <a class="mint-cell" style="min-height: 60px">
+            <div class="mint-cell-left"></div>
+            <div class="mint-cell-wrapper" style="padding: 0 10px 0 0;text-indent: 10px;">
+                <img src="" width="50" height="36">
+                <div class="mint-cell-title">
+                    <span class="mint-cell-text" style="margin-left: 10px;">粤SZ***159的交通违章信息详情</span>
+                    <span class="mint-cell-label" style="margin-left: 10px;">广东深圳 观澜大道竹村机荷桥底-观澜大道竹村</span>
                 </div>
             </div>
-        </div>
+            <div class="mint-cell-right"></div>
+        </a>
+        <a class="mint-cell" style="min-height: 60px">
+            <div class="mint-cell-left"></div>
+            <div class="mint-cell-wrapper" style="padding: 0 10px 0 0;text-indent: 10px;">
+                <img src="" width="50" height="36">
+                <div class="mint-cell-title">
+                    <span class="mint-cell-text" style="margin-left: 10px;">粤LV***17T的交通违章信息详情</span>
+                    <span class="mint-cell-label" style="margin-left: 10px;">广东惠州 秋长-坑梓16公里700米的</span>
+                </div>
+            </div>
+            <div class="mint-cell-right"></div>
+        </a>
+        <a class="mint-cell" style="min-height: 60px">
+            <div class="mint-cell-left"></div>
+            <div class="mint-cell-wrapper" style="padding: 0 10px 0 0;text-indent: 10px;">
+                <img src="" width="50" height="36">
+                <div class="mint-cell-title">
+                    <span class="mint-cell-text" style="margin-left: 10px;">粤LV***17T的交通违章信息详情</span>
+                    <span class="mint-cell-label" style="margin-left: 10px;">广东惠州 秋长-坑梓16公里700米的</span>
+                </div>
+            </div>
+            <div class="mint-cell-right"></div>
+        </a>
+        <a class="mint-cell" style="min-height: 60px">
+            <div class="mint-cell-left"></div>
+            <div class="mint-cell-wrapper" style="padding: 0 10px 0 0;text-indent: 10px;">
+                <img src="" width="50" height="36">
+                <div class="mint-cell-title">
+                    <span class="mint-cell-text" style="margin-left: 10px;">粤LV***17T的交通违章信息详情</span>
+                    <span class="mint-cell-label" style="margin-left: 10px;">广东惠州 秋长-坑梓16公里700米的</span>
+                </div>
+            </div>
+            <div class="mint-cell-right"></div>
+        </a>
+        <a class="mint-cell" style="min-height: 60px">
+            <div class="mint-cell-left"></div>
+            <div class="mint-cell-wrapper" style="padding: 0 10px 0 0;text-indent: 10px;">
+                <img src="" width="50" height="36">
+                <div class="mint-cell-title">
+                    <span class="mint-cell-text" style="margin-left: 10px;">粤LV***17T的交通违章信息详情</span>
+                    <span class="mint-cell-label" style="margin-left: 10px;">广东惠州 秋长-坑梓16公里700米的</span>
+                </div>
+            </div>
+            <div class="mint-cell-right"></div>
+        </a>
+
 
         <v-footer></v-footer>
     </div>
